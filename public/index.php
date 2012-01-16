@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['p'])) {
-    exec(__DIR__ . '/../lib/USBMailNotifierCmd.exe -P '.$_POST['p']);
+    exec(__DIR__ . '/../lib/USBMailNotifierCmd.exe -P '.escapeshellarg($_POST['p']));
 } elseif (isset($_POST['r']) && isset($_POST['g']) && isset($_POST['b'])) {
-    exec(__DIR__ . '/../lib/USBMailNotifierCmd.exe -C '.$_POST['r'].' '.$_POST['g'].' '.$_POST['b']);
+    exec(__DIR__ . '/../lib/USBMailNotifierCmd.exe -C '.escapeshellarg($_POST['r']).' '.escapeshellarg($_POST['g']).' '.escapeshellarg($_POST['b']));
 } else { ?>
     <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
